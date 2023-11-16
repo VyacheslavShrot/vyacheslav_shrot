@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <link href="/static/css/404_500.css" rel="stylesheet">
+
+    <div class="centered" style="margin-top: 120px">
+        <a href="{% url 'core:about' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">ABOUT</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:experience' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">EXPERIENCE</strong>
+            </button>
+        </a>
+        <button class="button" style="--docsearch-key-gradient: rgba(0, 0, 0, 0.85);">
+            <strong id="parts">PROJECTS</strong>
+        </button>
+        <a href="{% url 'core:skills' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">SKILLS</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:education' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">EDUCATION</strong>
+            </button>
+        </a>
+    </div>
+
+    <div class="centered title" style="margin-bottom: 100px; margin-top: 100px">
+        <strong style="color: #1BFD9C; font-size: 60px; text-shadow: 0 0 20px;">404 ERROR</strong>
+    </div>
+
+{% endblock %}

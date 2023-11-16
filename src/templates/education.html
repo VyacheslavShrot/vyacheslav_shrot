@@ -1,0 +1,80 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <link href="/static/css/education.css" rel="stylesheet">
+
+    <div class="centered" style="margin-top: 120px">
+        <a href="{% url 'core:about' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">ABOUT</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:experience' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">EXPERIENCE</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:projects' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">PROJECTS</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:skills' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">SKILLS</strong>
+            </button>
+        </a>
+        <button class="button" style="--docsearch-key-gradient: rgba(0, 0, 0, 0.85);">
+            <strong id="parts">EDUCATION</strong>
+        </button>
+    </div>
+
+    <div class="centered" style="margin-top: 130px; margin-bottom: 190px;">
+        <div class="container" style="">
+            <div class="terminal_toolbar">
+                <div class="butt">
+                    <button class="btn btn-color"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                </div>
+                <p class="user">EDUCATION: ~</p>
+                <div class="add_tab">
+                    +
+                </div>
+            </div>
+            <div class="terminal_body">
+                <div class="terminal_promt">
+                    <span class="terminal_user"><strong id="title">vyacheslav@admin:</strong></span>
+                    <span id="main_text" class="terminal_bling"
+                          style="font-family: 'Courier New', 'monospace'">~ What about my education ?<br> ~ Having received incomplete secondary education, I dropped out of school and entered college, where I am now studying at the last 4th year remotely in a Ukrainian college in Dnipro Technical School of Energy and Information Technologies. And majoring in Automation and Computer-Integrated Technologies.<br>
+                    ~ At the time when I was just entering my 3rd year, as I have already mentioned in my story about myself, I was recommended a IT school for Python programming. After that I successfully graduated from this school, having 2 completed courses, certificates of completion of which I attach below, and you can also go to the website of this Ukrainian IT school on the link on the images, where I got most of my basic skills in this field.
+                    </span>
+                    <span class="terminal_cursor"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="centered" id="certificate">
+        <strong style="color: #1BFD9C; font-size: 60px; text-shadow: 0 0 20px;">CERTIFICATES</strong>
+    </div>
+    <div class="centered" style="margin-bottom: 250px">
+        <a id="img1" href="https://certificate.ithillel.ua/view/54185392"
+           target="_blank">
+            <img id="img" src="/static/img/PythonBasic.jpg" alt="..."
+                 style="max-width: 100%; border-radius: 30px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);">
+        </a>
+        <a id="img2" href="https://certificate.ithillel.ua/view/19614324"
+           target="_blank">
+            <img id="img2" src="/static/img/PythonPro.jpg" alt="..."
+                 style="max-width: 100%; border-radius: 30px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);">
+        </a>
+    </div>
+
+    <div id="mobile" class="centered" style="margin-bottom: 150px">
+        <a href="https://certificate.ithillel.ua/view/19614324"
+           target="_blank">
+            <img id="img2" src="/static/img/PythonPro.jpg" alt="..."
+                 style="max-width: 100%; border-radius: 30px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);">
+        </a>
+    </div>
+{% endblock %}

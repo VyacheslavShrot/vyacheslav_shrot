@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  backend:
+    build: ./
+    container_name: backend
+    working_dir: /portfolio
+    ports:
+      - ${LOCAL_PORT}:${WSGI_PORT}
+    command:
+      - sh
+      - -c
+      - |
+        python /portfolio/src/manage.py makemigrations &&
+        python /portfolio/src/manage.py migrate &&
+        python /portfolio/src/manage.py collectstatic --noinput &&
+        gunicorn -w ${WSGI_WORKERS} -b 0:${WSGI_PORT} --chdir ./src config.wsgi:application --reload --log-level=${WSGI_LOG_LEVEL}
+    volumes:
+      - ./src:/portfolio/src
+      - static_content:/portfolio/src/static
+      - media_content:/portfolio/src/media
+    env_file:
+      - .env
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 512M
+
+  nginx:
+    image: nginx:1.19
+    container_name: nginx_ws
+    volumes:
+      - static_content:/portfolio/src/static
+      - media_content:/portfolio/src/media
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - ${HTTP_PORT}
+      - ${HTTPS_PORT}
+    env_file:
+      - .env
+    depends_on:
+      - backend
+
+volumes:
+  static_content: { }
+  media_content: { }

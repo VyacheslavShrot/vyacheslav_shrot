@@ -1,0 +1,55 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <link href="/static/css/about.css" rel="stylesheet">
+
+    <div class="centered" style="margin-top: 120px">
+        <button class="button" style="--docsearch-key-gradient: rgba(0, 0, 0, 0.85);">
+            <strong id="parts">ABOUT</strong>
+        </button>
+        <a href="{% url 'core:experience' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">EXPERIENCE</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:projects' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">PROJECTS</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:skills' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">SKILLS</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:education' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">EDUCATION</strong>
+            </button>
+        </a>
+    </div>
+
+    <div class="centered" style="margin-top: 130px; margin-bottom: 190px">
+        <div class="container">
+            <div class="terminal_toolbar">
+                <div class="butt">
+                    <button class="btn btn-color"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                </div>
+                <p class="user">ABOUT: ~</p>
+                <div class="add_tab">
+                    +
+                </div>
+            </div>
+            <div class="terminal_body">
+                <div class="terminal_promt">
+                    <span class="terminal_user"><strong id="title">vyacheslav@admin:</strong></span>
+                    <span id="main_text" class="terminal_bling" style="font-family: 'Courier New', 'monospace'">~ What about me ?<br> ~ I currently live in Poland, but more than a year ago, while living in Ukraine, my father introduced me to his friend, who at that time had been working in IT for a long time. From that moment my path in this field started. He advised me on a school where I should get all the necessary skills and helped me in many other ways. Now I am learning new skills little by little, but I often improve the skills I already have by watching and attending various webinars and in other possible ways. I also do projects for friends, acquaintances, if there is an order, I take on freelancing, but I spend more time improving and learning new skills that would help me for future work, as I want to develop in a team with other specialists. In this regard, I am now in an active search for any opportunities.
+                </span>
+                    <span class="terminal_cursor"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,199 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <link href="/static/css/exp.css" rel="stylesheet">
+
+    <div class="centered" style="margin-top: 120px">
+        <a href="{% url 'core:about' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">ABOUT</strong>
+            </button>
+        </a>
+        <button class="button" style="--docsearch-key-gradient: rgba(0, 0, 0, 0.85);">
+            <strong id="parts">EXPERIENCE</strong>
+        </button>
+        <a href="{% url 'core:projects' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">PROJECTS</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:skills' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">SKILLS</strong>
+            </button>
+        </a>
+        <a href="{% url 'core:education' %}" style="text-decoration: none">
+            <button class="button">
+                <strong id="parts">EDUCATION</strong>
+            </button>
+        </a>
+    </div>
+
+    <div id="terminal" class="centered" style="margin-top: 130px; margin-bottom: 190px;">
+        <div class="container" style="flex: 1;">
+            <div class="terminal_toolbar">
+                <div class="butt">
+                    <button class="btn btn-color"></button>
+                    <button class="btn"></button>
+                    <button class="btn"></button>
+                </div>
+                <p class="user">EXPERIENCE: ~</p>
+                <div class="add_tab">
+                    +
+                </div>
+            </div>
+            <div class="terminal_body">
+                <div class="terminal_promt">
+                    <span class="terminal_user"><strong id="title">vyacheslav@admin:</strong></span>
+                    <span id="main_text" class="terminal_bling" style="font-family: 'Courier New', 'monospace'">~ What about my experience ?<br> ~ Literally right after my first Python Basic course at Hillel IT, I decided that the best option was to get real-world experience as early as possible and at that time I learned about freelancing sites like Fiverr and UpWork. And after a couple weeks I got my first order on Fiverr. The task was very simple to connect the backend and realize the sending of data from the form to email. Which I successfully did and got my first feedback.
+                    <br> ~ Further I went deeper into studying my direction and sometimes made orders from different sources: at one time I could find clients from Telegram IT groups, at other times on other sites or from acquaintances. But in these other cases, the projects were also not that complex and they are not on my GitHub profile.
+                    </span>
+                    <span class="terminal_cursor"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="code" class="container_code" style="flex: 0.8;">
+            <div class="window">
+                <div class="window-title">
+                    <a href="https://github.com/VyacheslavShrot/FiverrProject/tree/master" style="text-decoration: none" target="_blank">
+                        <strong style="color: white">FiverrProject</strong><strong style="color:#1BFD9C;"> LINK</strong>
+                    </a>
+                    <div class="window-buttons">
+                        <div class="window-button fullscreen"></div>
+                        <div class="window-button reduce"></div>
+                        <div class="window-button close"></div>
+                    </div>
+                </div>
+                <div class="console">
+      <pre><code>def send_email(request):
+    form = UserForm(request.POST, request.FILES)
+    if request.method == "POST" and form.is_valid():
+        name = form.cleaned_data["name"]
+        surname = form.cleaned_data["surname"]
+        email = form.cleaned_data["email"]
+        phone_number = form.cleaned_data["phone_number"]
+        country = form.cleaned_data["country"]
+        amount_people = form.cleaned_data["amount_people"]
+        budget = form.cleaned_data["budget"]
+        desc_project = form.cleaned_data["desc_project"]
+        dead_line = form.cleaned_data["dead_line"]
+        img = form.cleaned_data.get("img")
+        title_of_doc = form.cleaned_data["title_of_doc"]
+        screen_play = form.cleaned_data["screen_play"]
+
+    message = render_to_string(
+        template_name="emails.html",
+        context={
+            "name": name,
+            "surname": surname,
+            "phone_number": phone_number,
+            "email": email,
+            "country": country,
+            "amount_people": amount_people,
+            "budget": budget,
+            "desc_project": desc_project,
+            "dead_line": dead_line,
+            "img": img,
+            "title_of_doc": title_of_doc,
+            "screen_play": screen_play
+        }
+    )
+
+    email = EmailMessage(
+        subject="Film", body=message, to=[settings.EMAIL_HOST_USER]
+    )
+    email.content_subtype = "html"
+    email.send(fail_silently=settings.EMAIL_FAIL_SILENTLY)<br><br>class IndexView(TemplateView, FormView):
+    template_name = "index.html"
+    form_class = UserForm
+    success_url = reverse_lazy("index")
+
+    def form_valid(self, form):
+        send_email(request=self.request)
+
+        messages.info(self.request, ' ')
+        return super().form_valid(form)</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="terminal2" class="centered" style="margin-top: 300px; margin-bottom: 190px;">
+        <div id="code2" class="container_code" style="flex: 0.8;">
+            <div class="window">
+                <div class="window-title">
+                    <a href="https://github.com/VyacheslavShrot/FiverrProject/tree/master" style="text-decoration: none" target="_blank">
+                        <strong style="color: white">FiverrProject</strong><strong style="color:#1BFD9C;"> LINK</strong>
+                    </a>
+                    <div class="window-buttons">
+                        <div class="window-button fullscreen"></div>
+                        <div class="window-button reduce"></div>
+                        <div class="window-button close"></div>
+                    </div>
+                </div>
+                <div class="console">
+      <pre><code>def send_email(request):
+    form = UserForm(request.POST, request.FILES)
+    if request.method == "POST" and form.is_valid():
+        name = form.cleaned_data["name"]
+        surname = form.cleaned_data["surname"]
+        email = form.cleaned_data["email"]
+        phone_number = form.cleaned_data["phone_number"]
+        country = form.cleaned_data["country"]
+        amount_people = form.cleaned_data["amount_people"]
+        budget = form.cleaned_data["budget"]
+        desc_project = form.cleaned_data["desc_project"]
+        dead_line = form.cleaned_data["dead_line"]
+        img = form.cleaned_data.get("img")
+        title_of_doc = form.cleaned_data["title_of_doc"]
+        screen_play = form.cleaned_data["screen_play"]
+
+    message = render_to_string(
+        template_name="emails.html",
+        context={
+            "name": name,
+            "surname": surname,
+            "phone_number": phone_number,
+            "email": email,
+            "country": country,
+            "amount_people": amount_people,
+            "budget": budget,
+            "desc_project": desc_project,
+            "dead_line": dead_line,
+            "img": img,
+            "title_of_doc": title_of_doc,
+            "screen_play": screen_play
+        }
+    )
+
+    email = EmailMessage(
+        subject="Film", body=message, to=[settings.EMAIL_HOST_USER]
+    )
+    email.content_subtype = "html"
+    email.send(fail_silently=settings.EMAIL_FAIL_SILENTLY)<br><br>class IndexView(TemplateView, FormView):
+    template_name = "index.html"
+    form_class = UserForm
+    success_url = reverse_lazy("index")
+
+    def form_valid(self, form):
+        send_email(request=self.request)
+
+        messages.info(self.request, ' ')
+        return super().form_valid(form)</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="feedback" class="centered" style="margin-bottom: 200px; flex-direction: column">
+        <strong style="color: #1BFD9C; font-size: 60px; text-shadow: 0 0 20px; margin-bottom: 30px">FEEDBACK</strong>
+        <a href="https://www.fiverr.com/shrotvyacheslav?public_mode=true" style="text-decoration: none" target="_blank">
+            <button class="button">
+                <strong id="parts">FIVERR PROFILE</strong>
+            </button>
+        </a>
+        <img id="feedback" src="/static/img/feedback.png" alt="..."
+             style="height: auto; border-radius: 30px; box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); margin-top: 30px">
+    </div>
+{% endblock %}

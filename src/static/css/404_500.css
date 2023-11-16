@@ -1,0 +1,42 @@
+@media (max-width: 767px) {
+    strong#parts {
+        font-size: 11px;
+    }
+
+    .button {
+        font-size: 0.5em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1000px) {
+    .button {
+        font-size: 0.7em;
+    }
+}
+
+@media (min-width: 1001px) {
+    .button {
+        font-size: 1em;
+    }
+}
+
+.button {
+    --key-text-color: #1BFD9C;
+    --docsearch-key-shadow: inset 0 -2px 0 0 black, inset 0 0 1px 1px black, 0 1px 2px 1px black;
+    --docsearch-key-gradient: rgba(0, 0, 0, 0.65);;
+    border: none;
+    background: var(--docsearch-key-gradient);
+    border-radius: 3px;
+    box-shadow: var(--docsearch-key-shadow);
+    color: var(--key-text-color);
+    height: 2.5em;
+    text-align: center;
+    padding: 0.6em;
+    margin: 0 0.6em;
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: bold;
+    min-width: 1em;
+    line-height: 1em;
+    user-select: none;
+}
